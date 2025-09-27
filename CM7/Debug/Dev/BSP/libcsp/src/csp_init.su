@@ -1,0 +1,5 @@
+D:/STworkspace/OBC_V10_ALT_STL_PIF_R100/OBC_V10/CM7/Dev/BSP/libcsp/include/csp/csp_rtable.h:149:19:csp_route_set	16	static
+../Dev/BSP/libcsp/src/csp_init.c:31:9:csp_get_address	4	static
+../Dev/BSP/libcsp/src/csp_init.c:36:5:csp_init	24	static
+../Dev/BSP/libcsp/src/csp_init.c:80:6:csp_free_resources	8	static
+../Dev/BSP/libcsp/src/csp_init.c:91:20:csp_get_conf	4	static

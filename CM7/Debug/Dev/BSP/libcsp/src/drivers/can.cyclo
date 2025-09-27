@@ -1,0 +1,2 @@
+../Dev/BSP/libcsp/src/drivers/can.c:14:5:can_init	2
+../Dev/BSP/libcsp/src/drivers/can.c:31:5:can_send	2
