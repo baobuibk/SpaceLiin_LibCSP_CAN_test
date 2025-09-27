@@ -98,7 +98,7 @@ void csp_tx_task(void *argument) {
 	const char *msg = "Hello world";
 	for(;;)
 	{
-		csp_conn_t *conn = csp_connect(CSP_PRIO_NORM, 3, 8, 1000, CSP_O_NONE);
+		csp_conn_t *conn = csp_connect(CSP_PRIO_NORM, 3, 48, 1000, CSP_O_NONE);
 		if (conn == NULL) {
 			vTaskDelay(1000);
 			continue;
@@ -151,12 +151,12 @@ void csp_rx_task(void *argument) {
 		csp_packet_t *packet;
 		while ((packet = csp_read(conn, 100)) != NULL) {
 			switch (csp_conn_dport(conn)) {
+			case 0:
+			case 1:
+			case 26:
+			case 3:
+			case 48:
 			case 8:
-				/* Process packet here */
-				csp_log_info("Packet received on MY_SERVER_PORT: %s", (char *) packet->data);
-				csp_buffer_free(packet);
-				++server_received;
-				break;
 			case 10:
 				/* Process packet here */
 				csp_log_info("Packet received on MY_SERVER_PORT: %s", (char *) packet->data);
