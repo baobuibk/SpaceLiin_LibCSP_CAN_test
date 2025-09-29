@@ -69,6 +69,8 @@
 FDCAN_HandleTypeDef hfdcan1;
 uint32_t server_received = 0;
 
+uint8_t dest = 3;
+
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -95,17 +97,18 @@ uint32_t txBufferIndex = 0;
 
 void csp_tx_task(void *argument) {
 
-	const char *msg = "Hello world";
+	const char *msg = "H\n";
+//	const char *msg = "Hello world\n";
 	for(;;)
 	{
-		csp_conn_t *conn = csp_connect(CSP_PRIO_NORM, 3, 48, 1000, CSP_O_NONE);
+		csp_conn_t *conn = csp_connect(CSP_PRIO_NORM, dest, 8, 1000, CSP_O_NONE);
 		if (conn == NULL) {
 			vTaskDelay(1000);
 			continue;
 		}
 
 		/* Cấp packet và copy payload */
-		size_t len = strlen(msg) + 1;
+		size_t len = strlen(msg);
 		csp_packet_t *pkt = csp_buffer_get(len);
 		if (pkt == NULL) {
 			csp_close(conn);
@@ -140,9 +143,9 @@ void csp_rx_task(void *argument) {
 
 	/* Wait for connections and then process packets on the connection */
 	while (1) {
-		/* Wait for a new connection, 10000 mS timeout */
+		/* Wait for a new connection, 1000 mS timeout */
 		csp_conn_t *conn;
-		if ((conn = csp_accept(sock, 10000)) == NULL) {
+		if ((conn = csp_accept(sock, 1000)) == NULL) {
 			/* timeout */
 			continue;
 		}
@@ -151,11 +154,6 @@ void csp_rx_task(void *argument) {
 		csp_packet_t *packet;
 		while ((packet = csp_read(conn, 100)) != NULL) {
 			switch (csp_conn_dport(conn)) {
-			case 0:
-			case 1:
-			case 26:
-			case 3:
-			case 48:
 			case 8:
 			case 10:
 				/* Process packet here */
@@ -258,8 +256,7 @@ Error_Handler();
   /*CSP INTERFACE INIT*/
   can_csp_init();
   csp_route_start_task(500, 6);
-  csp_rtable_set(3, CSP_ID_HOST_SIZE, &can_iface, CSP_NO_VIA_ADDRESS);
-
+  csp_rtable_set(dest, CSP_ID_HOST_SIZE, &can_iface, 1);
 
   xTaskCreate(csp_tx_task, "csp_can_tx", configMINIMAL_STACK_SIZE * 10, NULL, configMAX_PRIORITIES - 3U, NULL);
   xTaskCreate(csp_rx_task, "csp_can_rx", configMINIMAL_STACK_SIZE * 10, NULL, configMAX_PRIORITIES - 1, NULL);
