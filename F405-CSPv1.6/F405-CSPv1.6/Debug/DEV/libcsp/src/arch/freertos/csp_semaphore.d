@@ -1,0 +1,36 @@
+DEV/libcsp/src/arch/freertos/csp_semaphore.o: \
+ ../DEV/libcsp/src/arch/freertos/csp_semaphore.c \
+ D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/arch/csp_semaphore.h \
+ D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/csp_platform.h \
+ D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/csp_types.h \
+ D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/csp_autoconfig.h \
+ D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/csp_error.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ ../Core/Inc/FreeRTOSConfig.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+ D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/csp_debug.h
+D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/arch/csp_semaphore.h:
+D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/csp_platform.h:
+D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/csp_types.h:
+D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/csp_autoconfig.h:
+D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/csp_error.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
+../Core/Inc/FreeRTOSConfig.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
+../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
+D:/STM32CubeIDE_1.13.2/F405-CSPv1.6/DEV/libcsp/include/csp/csp_debug.h:
